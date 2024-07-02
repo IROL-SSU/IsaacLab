@@ -4,9 +4,12 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation using Isaac Sim pip &mdash; IsaacLab  documentation</title>
+  <title>Installation &mdash; IsaacLab  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
 
   
   <!--[if lt IE 9]>
@@ -18,9 +21,14 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/design-tabs.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Grasp" href="markdown/unstructured/grasp.html" />
+    <link rel="prev" title="Welcome to IsaacLab’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,9 +50,22 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Installation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-isaac-sim">Installing Isaac Sim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-isaac-lab">Installing Isaac Lab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-isaac-lab">Cloning Isaac Lab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-reinforcement-learning-environment">Testing Reinforcement Learning Environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Environments:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown/test.html">test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown/unstructured/grasp.html">Grasp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown/unstructured/flip.html">Flip</a></li>
 </ul>
 
         </div>
@@ -61,7 +82,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Installation using Isaac Sim pip</li>
+      <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/pip_installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -71,32 +92,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation-using-isaac-sim-pip">
-<h1>Installation using Isaac Sim pip<a class="headerlink" href="#installation-using-isaac-sim-pip" title="Permalink to this heading"></a></h1>
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="installing-isaac-sim">
 <h2>Installing Isaac Sim<a class="headerlink" href="#installing-isaac-sim" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Installing Isaac Sim from pip is currently an experimental feature.
-If errors occur, please report them to the
-<a class="reference external" href="https://docs.omniverse.nvidia.com/isaacsim/latest/common/feedback.html">Isaac Sim Forums</a>
-and install Isaac Sim from pre-built binaries.</p>
+<p>The installation of Isaac Sim is in <a class="reference external" href="https://docs.omniverse.nvidia.com/isaacsim/latest/installation/index.html">official documentation.</a>
+please refer to it.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Installing Isaac Sim with pip requires GLIBC 2.34+ version compatibility.
-To check the GLIBC version on your system, use command <code class="docutils literal notranslate"><span class="pre">ldd</span> <span class="pre">--version</span></code>.</p>
-</div>
-<ul>
-<li><p>To use the pip installation approach for Isaac Sim, we recommend first creating a virtual environment.
-Ensure that the python version of the virtual environment is <strong>Python 3.10</strong>.</p></li>
-<li><p>Next, install a CUDA-enabled PyTorch 2.2.2 build based on the CUDA version available on your system.</p></li>
-<li><p>Then, install the Isaac Sim packages necessary for running Isaac Lab:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>isaacsim-rl<span class="w"> </span>isaacsim-replicator<span class="w"> </span>isaacsim-extscache-physics<span class="w"> </span>isaacsim-extscache-kit-sdk<span class="w"> </span>isaacsim-extscache-kit<span class="w"> </span>isaacsim-app<span class="w"> </span>--extra-index-url<span class="w"> </span>https://pypi.nvidia.com
-</pre></div>
-</div>
-</li>
-</ul>
 </section>
 <section id="installing-isaac-lab">
 <h2>Installing Isaac Lab<a class="headerlink" href="#installing-isaac-lab" title="Permalink to this heading"></a></h2>
@@ -104,34 +108,98 @@ Ensure that the python version of the virtual environment is <strong>Python 3.10
 <h3>Cloning Isaac Lab<a class="headerlink" href="#cloning-isaac-lab" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We recommend making a <a class="reference external" href="https://github.com/isaac-sim/IsaacLab/fork">fork</a> of the Isaac Lab repository to contribute
-to the project but this is not mandatory to use the framework. If you
-make a fork, please replace <code class="docutils literal notranslate"><span class="pre">isaac-sim</span></code> with your username
-in the following instructions.</p>
+<p>In this document, we use <a class="reference external" href="https://github.com/IROL-SSU/IsaacLab/">forked repository</a> of Isaac Lab for code management used in R&amp;D.</p>
 </div>
-<p>Clone the Isaac Lab repository into your workspace:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We provide a helper executable <a class="reference external" href="https://github.com/isaac-sim/IsaacLab/blob/main/isaaclab.sh">isaaclab.sh</a> that provides
-utilities to manage extensions:</p>
+<p>Clone the Isaac Lab repository in the workspace:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+HTTPS</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/IROL-SSU/IsaacLab.git
+</pre></div>
 </div>
-</section>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h3>
-<ul>
-<li><p>Install dependencies using <code class="docutils literal notranslate"><span class="pre">apt</span></code> (on Ubuntu):</p>
+</div>
+</div>
+<ul class="simple">
+<li><p>Install dependencies using <code class="docutils literal notranslate"><span class="pre">apt</span></code> (on Ubuntu):</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>build-essential
 </pre></div>
 </div>
-</li>
-<li><p>Run the install command that iterates over all the extensions in <code class="docutils literal notranslate"><span class="pre">source/extensions</span></code> directory and installs them
-using pip (with <code class="docutils literal notranslate"><span class="pre">--editable</span></code> flag):</p></li>
-</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="linux" for="sd-tab-item-1">
+Linux</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./isaaclab.sh<span class="w"> </span>--install<span class="w"> </span><span class="c1"># or &quot;./isaaclab.sh -i&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="testing-reinforcement-learning-environment">
+<h3>Testing Reinforcement Learning Environment<a class="headerlink" href="#testing-reinforcement-learning-environment" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default, this will install all the learning frameworks. If you want to install only a specific framework, you can
-pass the name of the framework as an argument. For example, to install only the <code class="docutils literal notranslate"><span class="pre">rl_games</span></code> framework, you can run</p>
-<p>The valid options are <code class="docutils literal notranslate"><span class="pre">rl_games</span></code>, <code class="docutils literal notranslate"><span class="pre">rsl_rl</span></code>, <code class="docutils literal notranslate"><span class="pre">sb3</span></code>, <code class="docutils literal notranslate"><span class="pre">skrl</span></code>, <code class="docutils literal notranslate"><span class="pre">robomimic</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p>
+<p>Run the examples below to verify that the training through each reinforcement learning library is running normally.</p>
+</div>
+<p>We provide wrappers to different reinforcement libraries. These wrappers convert the data from the environments
+into the respective libraries function argument and return types.</p>
+<ul>
+<li><p>Training an agent with
+<a class="reference external" href="https://stable-baselines3.readthedocs.io/en/master/index.html">Stable-Baselines3</a>
+on <code class="docutils literal notranslate"><span class="pre">Isaac-Cartpole-v0</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install python module (for stable-baselines3)</span>
+./isaaclab.sh<span class="w"> </span>-i<span class="w"> </span>sb3
+<span class="c1"># run script for training</span>
+<span class="c1"># note: we enable cpu flag since SB3 doesn&#39;t optimize for GPU anyway</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/sb3/train.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Cartpole-v0<span class="w"> </span>--headless<span class="w"> </span>--cpu
+<span class="c1"># run script for playing with 32 environments</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/sb3/play.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Cartpole-v0<span class="w"> </span>--num_envs<span class="w"> </span><span class="m">32</span><span class="w"> </span>--checkpoint<span class="w"> </span>/PATH/TO/model.zip
+</pre></div>
+</div>
+</li>
+<li><p>Training an agent with
+<a class="reference external" href="https://skrl.readthedocs.io">SKRL</a> on <code class="docutils literal notranslate"><span class="pre">Isaac-Reach-Franka-v0</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install python module (for skrl)</span>
+./isaaclab.sh<span class="w"> </span>-i<span class="w"> </span>skrl
+<span class="c1"># run script for training</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/skrl/train.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Reach-Franka-v0<span class="w"> </span>--headless
+<span class="c1"># run script for playing with 32 environments</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/skrl/play.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Reach-Franka-v0<span class="w"> </span>--num_envs<span class="w"> </span><span class="m">32</span><span class="w"> </span>--checkpoint<span class="w"> </span>/PATH/TO/model.pt
+</pre></div>
+</div>
+</li>
+<li><p>Training an agent with
+<a class="reference external" href="https://github.com/Denys88/rl_games">RL-Games</a> on <code class="docutils literal notranslate"><span class="pre">Isaac-Ant-v0</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install python module (for rl-games)</span>
+./isaaclab.sh<span class="w"> </span>-i<span class="w"> </span>rl_games
+<span class="c1"># run script for training</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/rl_games/train.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Ant-v0<span class="w"> </span>--headless
+<span class="c1"># run script for playing with 32 environments</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/rl_games/play.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Ant-v0<span class="w"> </span>--num_envs<span class="w"> </span><span class="m">32</span><span class="w"> </span>--checkpoint<span class="w"> </span>/PATH/TO/model.pth
+</pre></div>
+</div>
+</li>
+<li><p>Training an agent with
+<a class="reference external" href="https://github.com/leggedrobotics/rsl_rl">RSL-RL</a> on <code class="docutils literal notranslate"><span class="pre">Isaac-Reach-Franka-v0</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install python module (for rsl-rl)</span>
+./isaaclab.sh<span class="w"> </span>-i<span class="w"> </span>rsl_rl
+<span class="c1"># run script for training</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/rsl_rl/train.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Reach-Franka-v0<span class="w"> </span>--headless
+<span class="c1"># run script for playing with 32 environments</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>source/standalone/workflows/rsl_rl/play.py<span class="w"> </span>--task<span class="w"> </span>Isaac-Reach-Franka-v0<span class="w"> </span>--num_envs<span class="w"> </span><span class="m">32</span><span class="w"> </span>--load_run<span class="w"> </span>run_folder_name<span class="w"> </span>--checkpoint<span class="w"> </span>model.pt
+</pre></div>
+</div>
+</li>
+</ul>
+<p>All the scripts above log the training progress to <a class="reference external" href="https://www.tensorflow.org/tensorboard">Tensorboard</a> in the <code class="docutils literal notranslate"><span class="pre">logs</span></code> directory in the root of
+the repository. The logs directory follows the pattern <code class="docutils literal notranslate"><span class="pre">logs/&lt;library&gt;/&lt;task&gt;/&lt;date-time&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;library&gt;</span></code>
+is the name of the learning framework, <code class="docutils literal notranslate"><span class="pre">&lt;task&gt;</span></code> is the task name, and <code class="docutils literal notranslate"><span class="pre">&lt;date-time&gt;</span></code> is the timestamp at
+which the training script was executed.</p>
+<p>To view the logs, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute from the root directory of the repository</span>
+./isaaclab.sh<span class="w"> </span>-p<span class="w"> </span>-m<span class="w"> </span>tensorboard.main<span class="w"> </span>--logdir<span class="o">=</span>logs
+</pre></div>
 </div>
 </section>
 </section>
@@ -140,7 +208,10 @@ pass the name of the framework as an argument. For example, to install only the 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to IsaacLab’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="markdown/unstructured/grasp.html" class="btn btn-neutral float-right" title="Grasp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

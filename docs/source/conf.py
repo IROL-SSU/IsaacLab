@@ -24,7 +24,20 @@ author = 'Jinseok Kim'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc','recommonmark']
+extensions = [
+    'sphinx.ext.autodoc',
+    'recommonmark',
+    "sphinx.ext.autosummary",
+    "sphinx.ext.githubpages",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
+    # "sphinxcontrib.bibtex",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx_tabs.tabs",
+    ]
 
 templates_path = ['_templates']
 exclude_patterns = []

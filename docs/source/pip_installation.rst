@@ -1,5 +1,5 @@
-Installation using Isaac Sim pip
-================================
+Installation
+============
 
 
 Installing Isaac Sim
@@ -7,78 +7,8 @@ Installing Isaac Sim
 
 .. note::
 
-   Installing Isaac Sim from pip is currently an experimental feature.
-   If errors occur, please report them to the
-   `Isaac Sim Forums <https://docs.omniverse.nvidia.com/isaacsim/latest/common/feedback.html>`_
-   and install Isaac Sim from pre-built binaries.
-
-.. note::
-
-   Installing Isaac Sim with pip requires GLIBC 2.34+ version compatibility.
-   To check the GLIBC version on your system, use command ``ldd --version``.
-
-
--  To use the pip installation approach for Isaac Sim, we recommend first creating a virtual environment.
-   Ensure that the python version of the virtual environment is **Python 3.10**.
-
-   .. tab-set::
-
-      .. tab-item:: conda environment
-
-         .. code-block:: bash
-
-            conda create -n isaaclab python=3.10
-            conda activate isaaclab
-
-      .. tab-item:: venv environment
-
-         .. tab-set::
-            :sync-group: os
-
-            .. tab-item:: :icon:`fa-brands fa-linux` Linux
-               :sync: linux
-
-               .. code-block:: bash
-
-                  # create a conda environment named isaaclab with python3.10
-                  python3.10 -m venv isaaclab
-                  # activate the conda environment
-                  source isaaclab/bin/activate
-
-            .. tab-item:: :icon:`fa-brands fa-windows` Windows
-               :sync: windows
-
-               .. code-block:: batch
-
-                  # create a virtual environment named isaaclab with python3.10
-                  python3.10 -m venv isaaclab
-                  # activate the virtual environment
-                  isaaclab\Scripts\activate
-
-
--  Next, install a CUDA-enabled PyTorch 2.2.2 build based on the CUDA version available on your system.
-
-   .. tab-set::
-
-      .. tab-item:: CUDA 11
-
-         .. code-block:: bash
-
-            pip install torch==2.2.2 --index-url https://download.pytorch.org/whl/cu118
-
-      .. tab-item:: CUDA 12
-
-         .. code-block:: bash
-
-            pip install torch==2.2.2 --index-url https://download.pytorch.org/whl/cu121
-
-
--  Then, install the Isaac Sim packages necessary for running Isaac Lab:
-
-   .. code-block:: bash
-
-      pip install isaacsim-rl isaacsim-replicator isaacsim-extscache-physics isaacsim-extscache-kit-sdk isaacsim-extscache-kit isaacsim-app --extra-index-url https://pypi.nvidia.com
-
+   The installation of Isaac Sim is in `official documentation. <https://docs.omniverse.nvidia.com/isaacsim/latest/installation/index.html>`_
+   please refer to it.
 
 Installing Isaac Lab
 --------------------
@@ -88,20 +18,12 @@ Cloning Isaac Lab
 
 .. note::
 
-   We recommend making a `fork <https://github.com/isaac-sim/IsaacLab/fork>`_ of the Isaac Lab repository to contribute
-   to the project but this is not mandatory to use the framework. If you
-   make a fork, please replace ``isaac-sim`` with your username
-   in the following instructions.
+   In this document, we use `forked repository <https://github.com/IROL-SSU/IsaacLab/>`_ of Isaac Lab for code management used in R&D.
+   
 
-Clone the Isaac Lab repository into your workspace:
+Clone the Isaac Lab repository in the workspace:
 
 .. tab-set::
-
-   .. tab-item:: SSH
-
-      .. code:: bash
-
-         git clone git@github.com:IROL-SSU/IsaacLab.git
 
    .. tab-item:: HTTPS
 
@@ -110,103 +32,93 @@ Clone the Isaac Lab repository into your workspace:
          git clone https://github.com/IROL-SSU/IsaacLab.git
 
 
-.. note::
-   We provide a helper executable `isaaclab.sh <https://github.com/isaac-sim/IsaacLab/blob/main/isaaclab.sh>`_ that provides
-   utilities to manage extensions:
-
-   .. tab-set::
-      :sync-group: os
-
-      .. tab-item:: :icon:`fa-brands fa-linux` Linux
-         :sync: linux
-
-         .. code:: text
-
-            ./isaaclab.sh --help
-
-            usage: isaaclab.sh [-h] [-i] [-f] [-p] [-s] [-t] [-o] [-v] [-d] [-c] -- Utility to manage Isaac Lab.
-
-            optional arguments:
-               -h, --help           Display the help content.
-               -i, --install [LIB]  Install the extensions inside Isaac Lab and learning frameworks (rl_games, rsl_rl, sb3, skrl) as extra dependencies. Default is 'all'.
-               -f, --format         Run pre-commit to format the code and check lints.
-               -p, --python         Run the python executable provided by Isaac Sim or virtual environment (if active).
-               -s, --sim            Run the simulator executable (isaac-sim.sh) provided by Isaac Sim.
-               -t, --test           Run all python unittest tests.
-               -o, --docker         Run the docker container helper script (docker/container.sh).
-               -v, --vscode         Generate the VSCode settings file from template.
-               -d, --docs           Build the documentation from source using sphinx.
-               -c, --conda [NAME]   Create the conda environment for Isaac Lab. Default name is 'isaaclab'.
-
-      .. tab-item:: :icon:`fa-brands fa-windows` Windows
-         :sync: windows
-
-         .. code:: text
-
-            isaaclab.bat --help
-
-            usage: isaaclab.bat [-h] [-i] [-f] [-p] [-s] [-v] [-d] [-c] -- Utility to manage Isaac Lab.
-
-            optional arguments:
-               -h, --help           Display the help content.
-               -i, --install [LIB]  Install the extensions inside Isaac Lab and learning frameworks (rl_games, rsl_rl, sb3, skrl) as extra dependencies. Default is 'all'.
-               -f, --format         Run pre-commit to format the code and check lints.
-               -p, --python         Run the python executable provided by Isaac Sim or virtual environment (if active).
-               -s, --sim            Run the simulator executable (isaac-sim.bat) provided by Isaac Sim.
-               -t, --test           Run all python unittest tests.
-               -v, --vscode         Generate the VSCode settings file from template.
-               -d, --docs           Build the documentation from source using sphinx.
-               -c, --conda [NAME]   Create the conda environment for Isaac Lab. Default name is 'isaaclab'.
-
-Installation
-~~~~~~~~~~~~
-
 -  Install dependencies using ``apt`` (on Ubuntu):
 
-   .. code:: bash
+.. code:: bash
 
-      sudo apt install cmake build-essential
-
-- Run the install command that iterates over all the extensions in ``source/extensions`` directory and installs them
-  using pip (with ``--editable`` flag):
+   sudo apt install cmake build-essential
 
 .. tab-set::
    :sync-group: os
 
-   .. tab-item:: :icon:`fa-brands fa-linux` Linux
+   .. tab-item:: Linux
       :sync: linux
 
       .. code:: bash
 
          ./isaaclab.sh --install # or "./isaaclab.sh -i"
 
-   .. tab-item:: :icon:`fa-brands fa-windows` Windows
-      :sync: windows
 
-      .. code:: bash
-
-         isaaclab.bat --install :: or "isaaclab.bat -i"
+Testing Reinforcement Learning Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-   By default, this will install all the learning frameworks. If you want to install only a specific framework, you can
-   pass the name of the framework as an argument. For example, to install only the ``rl_games`` framework, you can run
+   Run the examples below to verify that the training through each reinforcement learning library is running normally.
 
-   .. tab-set::
-      :sync-group: os
+We provide wrappers to different reinforcement libraries. These wrappers convert the data from the environments
+into the respective libraries function argument and return types.
 
-      .. tab-item:: :icon:`fa-brands fa-linux` Linux
-         :sync: linux
+-  Training an agent with
+   `Stable-Baselines3 <https://stable-baselines3.readthedocs.io/en/master/index.html>`__
+   on ``Isaac-Cartpole-v0``:
 
-         .. code:: bash
+   .. code:: bash
 
-            ./isaaclab.sh --install rl_games  # or "./isaaclab.sh -i rl_games"
+      # install python module (for stable-baselines3)
+      ./isaaclab.sh -i sb3
+      # run script for training
+      # note: we enable cpu flag since SB3 doesn't optimize for GPU anyway
+      ./isaaclab.sh -p source/standalone/workflows/sb3/train.py --task Isaac-Cartpole-v0 --headless --cpu
+      # run script for playing with 32 environments
+      ./isaaclab.sh -p source/standalone/workflows/sb3/play.py --task Isaac-Cartpole-v0 --num_envs 32 --checkpoint /PATH/TO/model.zip
 
-      .. tab-item:: :icon:`fa-brands fa-windows` Windows
-         :sync: windows
+-  Training an agent with
+   `SKRL <https://skrl.readthedocs.io>`__ on ``Isaac-Reach-Franka-v0``:
 
-         .. code:: bash
+   .. code:: bash
 
-            isaaclab.bat --install rl_games :: or "isaaclab.bat -i rl_games"
+      # install python module (for skrl)
+      ./isaaclab.sh -i skrl
+      # run script for training
+      ./isaaclab.sh -p source/standalone/workflows/skrl/train.py --task Isaac-Reach-Franka-v0 --headless
+      # run script for playing with 32 environments
+      ./isaaclab.sh -p source/standalone/workflows/skrl/play.py --task Isaac-Reach-Franka-v0 --num_envs 32 --checkpoint /PATH/TO/model.pt
 
-   The valid options are ``rl_games``, ``rsl_rl``, ``sb3``, ``skrl``, ``robomimic``, ``none``.
+-  Training an agent with
+   `RL-Games <https://github.com/Denys88/rl_games>`__ on ``Isaac-Ant-v0``:
+
+   .. code:: bash
+
+      # install python module (for rl-games)
+      ./isaaclab.sh -i rl_games
+      # run script for training
+      ./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Ant-v0 --headless
+      # run script for playing with 32 environments
+      ./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Ant-v0 --num_envs 32 --checkpoint /PATH/TO/model.pth
+
+-  Training an agent with
+   `RSL-RL <https://github.com/leggedrobotics/rsl_rl>`__ on ``Isaac-Reach-Franka-v0``:
+
+   .. code:: bash
+
+      # install python module (for rsl-rl)
+      ./isaaclab.sh -i rsl_rl
+      # run script for training
+      ./isaaclab.sh -p source/standalone/workflows/rsl_rl/train.py --task Isaac-Reach-Franka-v0 --headless
+      # run script for playing with 32 environments
+      ./isaaclab.sh -p source/standalone/workflows/rsl_rl/play.py --task Isaac-Reach-Franka-v0 --num_envs 32 --load_run run_folder_name --checkpoint model.pt
+
+All the scripts above log the training progress to `Tensorboard`_ in the ``logs`` directory in the root of
+the repository. The logs directory follows the pattern ``logs/<library>/<task>/<date-time>``, where ``<library>``
+is the name of the learning framework, ``<task>`` is the task name, and ``<date-time>`` is the timestamp at
+which the training script was executed.
+
+To view the logs, run:
+
+.. code:: bash
+
+   # execute from the root directory of the repository
+   ./isaaclab.sh -p -m tensorboard.main --logdir=logs
+
+.. _Tensorboard: https://www.tensorflow.org/tensorboard

@@ -5,24 +5,19 @@
 
 Welcome to IsaacLab's documentation!
 ====================================
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   markdown/test.md
-
 .. toctree::
    :maxdepth: 2
    :caption: Installation:
 
-   pip_installation.md
+   pip_installation.rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Environments:
+
+   markdown/unstructured/grasp.md
+   markdown/unstructured/flip.md
 
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
